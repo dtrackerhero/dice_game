@@ -62,17 +62,17 @@ class DiceGame:
                 break
 
     def play_round(self):
-        # Welcome the player to the round.
+        # ゲームの開始
         self.print_welcome()
 
-        # Roll the dice (player and computer).
+        # サイコロを振る
         player_value = self.player.roll_die()
         computer_value = self.computer.roll_die()
 
-        # Show the values of the dice.
+        # 出た目を表示
         self.show_dice(player_value, computer_value)
 
-        # Determine winner or loser
+        # どちらが勝ったかを決める
         if player_value > computer_value:
             print("You won this round! 🎉")
             self.update_counters(winner=self.player, loser=self.computer)
@@ -82,7 +82,7 @@ class DiceGame:
         else:
             print("It's a tie! 😎")
 
-        # Show the counters of the players
+        # カウンターを表示
         self.show_counters()
 
     def print_welcome(self):
