@@ -10,6 +10,7 @@ class Die:
     def value(self):
         return self._value
 
+    # 振られたときに何かしらの目を出す
     def roll(self):
         new_value = random.randint(1, 6)
         self._value = new_value
@@ -19,8 +20,11 @@ class Die:
 class Player:
 
     def __init__(self, die, is_computer=False):
+        # 自分用のサイコロを割り当てる
         self._die = die
+        # コンピュータかどうか
         self._is_computer = is_computer
+        # 持ち点
         self._counter = 10
 
     @property
@@ -41,6 +45,7 @@ class Player:
     def decrement_counter(self):
         self._counter -= 1
 
+    # サイコロを振るのはプレイヤー
     def roll_die(self):
         return self._die.roll()
 
